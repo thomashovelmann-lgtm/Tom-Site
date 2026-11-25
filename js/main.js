@@ -122,7 +122,7 @@ const fig=(f,r)=>{
     : `<div class="slot" style="--r:${ratio}" role="img" aria-label="${esc(f.label)} (image to add)">${f.cap?'':`<b>${esc(f.label)}</b>`}<code>${esc(f.slot)}</code></div>`;
   return `<figure>${body}${f.cap?`<figcaption class="cap">${esc(f.cap)}</figcaption>`:''}</figure>`;
 };
-const figs=(s)=>s.figs&&s.figs.length?`<div class="grid" style="--c:${s.c||2}">${s.figs.map(f=>fig(f,s.r)).join('')}</div>`:'';
+const figs=(s)=>s.figs&&s.figs.length?`<div class="grid c${s.c||2}" style="--c:${s.c||2}">${s.figs.map(f=>fig(f,s.r)).join('')}</div>`:'';
 const paras=a=>(a||[]).map(p=>`<p>${esc(p)}</p>`).join('');
 const feats=a=>a?`<div class="feats">${a.map(([h,p])=>`<div><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('')}</div>`:'';
 
@@ -163,7 +163,7 @@ const section=s=>{
     </div></div>
    <dl class="specs">${s.specs.map(([v,l])=>`<div><dt>${esc(v)}</dt><dd>${esc(l)}</dd></div>`).join('')}</dl>`;
   if(s.t==='parts') inner+=`<div class="tbl"><table><thead><tr><th class="num">Item</th><th>Part</th><th class="num">Qty</th></tr></thead><tbody>${s.rows.map(([i,n,q])=>`<tr><td class="num">${i}</td><td>${esc(n)}</td><td class="num">${q}</td></tr>`).join('')}</tbody></table></div>`;
-  return `<section class="row"><h2>${esc(s.h)}</h2><div>${inner}${figs(s)}</div></section>`;
+  return `<section class="row"><h2>${esc(s.h)}</h2><div class="txt">${inner}</div>${figs(s)}</section>`;
 };
 
 const LAY=['wide','big','side','half','half','third','third','third'];
