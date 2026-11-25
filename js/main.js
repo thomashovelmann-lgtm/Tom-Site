@@ -174,7 +174,7 @@ const home=()=>`
 <div class="view">
  <section class="band wrap intro">
   <h1 class="name">Thomas<br>Hovelmann</h1>
-  <p class="lede"><strong>Industrial designer in Sydney.</strong> I design furniture and everyday products, then build them at full scale to test with the people who will use them. Bachelor of Product Design (Honours), UTS.</p>
+  <p class="lede"><strong>I’m a 22-year-old graduate industrial designer from Sydney, Australia,</strong> eager to utilise my skills within the industry to deliver meaningful designs. With a passion for communication, I am keen to cooperate with other talented individuals to push my skillset further as a creative.</p>
  </section>
  <figure class="hero">
   <img src="${HAVE['shift-bench'][0]}" alt="${esc(IMG.bench.label)}">
